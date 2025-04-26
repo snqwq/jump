@@ -5,9 +5,34 @@
     <title>Jumping...</title>
     <script>
       window.onload = function () {
-        window.location.href = "https://www.example.com/";
+        // Get the URL from the query string (e.g., ?url=steam://run/480)
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetUrl = urlParams.get("url"); // This will get the value of "url"
+
+        // If a valid URL is provided, redirect the user
+        if (targetUrl) {
+          window.location.href = targetUrl;
+        } else {
+          // If no URL is provided, show an error message
+          document.body.innerHTML =
+            "<h1>No URL Provided</h1><p>Please specify a URL in the query string.</p><p>Example: ?url=steam://run/480</p>";
+        }
       };
     </script>
   </head>
-  <body></body>
+  <body>
+    <p>Redirecting...</p>
+    <p>
+      If you are not redirected automatically, please click
+      <a href="" id="manual-link">here</a>.
+    </p>
+    <script>
+      // Set the href of the link to the current URL (fallback in case redirect fails)
+      const urlParams = new URLSearchParams(window.location.search);
+      const targetUrl = urlParams.get("url");
+      if (targetUrl) {
+        document.getElementById("manual-link").href = targetUrl;
+      }
+    </script>
+  </body>
 </html>
