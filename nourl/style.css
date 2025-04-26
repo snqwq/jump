@@ -1,0 +1,45 @@
+html {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+  background: #000;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: blueviolet;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff00ff;
+  transition: color 0.3s;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+  background: #222;
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 90vh;
+
+  overflow: hidden;
+}
+
+.socials-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+}

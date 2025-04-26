@@ -8,7 +8,6 @@
         // Get the URL from the query string (e.g., ?url=steam://run/480)
         const urlParams = new URLSearchParams(window.location.search);
         const targetUrl = urlParams.get("url"); // This will get the value of "url"
-
         // If a valid URL is provided, redirect the user
         if (targetUrl) {
           // hort delay to prevent accidental clicks
