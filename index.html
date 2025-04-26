@@ -1,47 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Launching...</title>
-  <script>
-    window.onload = function() {
-      // Get full path after domain
-      const path = window.location.pathname.substring(1); // remove leading '/'
-      
-      if (!path) {
-        document.body.innerHTML = "<h1>No path provided</h1><p>Example usage: /steam/run/480</p>";
-        return;
-      }
-
-      // Split path by '/'
-      const parts = path.split('/');
-      
-      if (parts.length < 2) {
-        document.body.innerHTML = "<h1>Invalid path</h1><p>Example usage: /steam/run/480</p>";
-        return;
-      }
-
-      const scheme = parts[0]; // e.g., 'steam'
-      const rest = parts.slice(1).join('/'); // e.g., 'run/480'
-
-      const uri = `${scheme}://${rest}`; // build 'steam://run/480'
-
-      // Redirect
-      window.location.href = uri;
-    };
-  </script>
-</head>
-<body>
-  <p>Redirecting... If nothing happens, <a id="manual-link" href="#">click here</a>.</p>
-  <script>
-    const path = window.location.pathname.substring(1);
-    const parts = path.split('/');
-    if (parts.length >= 2) {
-      const scheme = parts[0];
-      const rest = parts.slice(1).join('/');
-      const uri = `${scheme}://${rest}`;
-      document.getElementById('manual-link').href = uri;
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jumping...</title>
+    <script>
+      window.onload = function() {
+    </script>
+  </head>
+  <body></body>
 </html>
