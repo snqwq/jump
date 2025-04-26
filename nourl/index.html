@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script>
+      window.onload = function () {
+        // Get the URL from the query string (e.g., ?url=steam://run/480)
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetUrl = urlParams.get("url"); // This will get the value of "url"
+        // If a valid URL is provided, redirect the user
+        if (targetUrl) {
+          const newTarget = "https://snqwq.github.io/jump/?url=" + targetUrl;
+          // Short delay to prevent accidental clicks
+          setTimeout(() => {
+            // Redirect to the provided URL
+            window.location.href = newTarget;
+          }, 1000); // 1 second delay
+        } else {
+          return // If no URL is provided do nothing
+        }};
+    </script>
   </head>
   <body>
     <div class="container">
