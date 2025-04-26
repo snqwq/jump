@@ -11,11 +11,14 @@
 
         // If a valid URL is provided, redirect the user
         if (targetUrl) {
-          window.location.href = targetUrl;
+          // hort delay to prevent accidental clicks
+          setTimeout(() => {
+            // Redirect to the provided URL
+            window.location.href = targetUrl;
+          }, 1000); // 1 second delay
         } else {
-          // If no URL is provided, show an error message
-          document.body.innerHTML =
-            "<h1>No URL Provided</h1><p>Please specify a URL in the query string.</p><p>Example: ?url=steam://run/480</p>";
+          // If no URL is provided, redirect to nourl.html
+          window.location.href = "nourl";
         }
       };
     </script>
@@ -26,6 +29,7 @@
       If you are not redirected automatically, please click
       <a href="" id="manual-link">here</a>.
     </p>
+    <p></p>
     <script>
       // Set the href of the link to the current URL (fallback in case redirect fails)
       const urlParams = new URLSearchParams(window.location.search);
